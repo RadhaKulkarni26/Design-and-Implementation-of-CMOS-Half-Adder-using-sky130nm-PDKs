@@ -1,8 +1,7 @@
 # DESIGN AND IMPLEMENTATION OF HALF ADDER USING CMOS AND SKY130nm PDK
 
 - The purpose of this project is to design a CMOS Half ADDER using an Opensource EDA Tool called **eSim**, an Opensource Spice Simulator called **ngspice** and **Sky130 PDK**.
-- To explore the project, you can git clone using the command: git clone https://github.com/RadhaKulkarni26/Design-and-Implementation-of-Full-Adder-using-sky130-PDK.git
-
+- To explore the project, you can git clone using the command: git clone https://github.com/RadhaKulkarni26/Design-and-Implementation-of-CMOS-Half-Adder-using-sky130nm-PDKs.git
 ## Table of Contents:
 
 1. INTRODUCTION
