@@ -1,0 +1,36 @@
+* c:\spb_data\esim-workspace\half_adder\half_adder.cir
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+xm7  net-_m10-pad3_ a vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5
+xm9  net-_m10-pad3_ b vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5
+xm8  sum a0 net-_m10-pad3_ vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5
+xm10  sum b0 net-_m10-pad3_ vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5
+xm5  sum a net-_m5-pad3_ gnd sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+xm11  sum a0 net-_m11-pad3_ gnd sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+xm12  net-_m11-pad3_ b0 gnd gnd sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+xm6  net-_m5-pad3_ b gnd gnd sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+xm13  carry a0 gnd gnd sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+xm16  carry b0 gnd gnd sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+xm14  net-_m14-pad1_ a0 vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5
+xm15  carry b0 net-_m14-pad1_ vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5
+xm3  a0 a vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5
+xm1  a0 a gnd gnd sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+xm4  vdd b b0 vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5
+xm2  b0 b gnd gnd sky130_fd_pr__nfet_01v8 w=0.42 l=0.5
+
+Vdd vdd 0 3.3
+Vd0 a 0 pulse(0 2.2 0us 0s 0s 20us 40us)
+Vd1 b 0 pulse(0 2.2 0us 0s 0s 10us 20us)
+* u1  /a /b /vdd /sum /carry port
+.tran 0.1us 60us
+* Control Statements 
+.control
+run
+
+plot V(carry) V(sum) +4 V(b) +12 V(a)+15
+
+
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+.endc
+.end
