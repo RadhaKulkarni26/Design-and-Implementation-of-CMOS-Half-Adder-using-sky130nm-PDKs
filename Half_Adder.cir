@@ -1,0 +1,27 @@
+* C:\SPB_Data\eSim-Workspace\Half_Adder\Half_Adder.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 2/10/2022 9:56:26 PM
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+M7  Net-_M10-Pad3_ /A /VDD /VDD mosfet_p		
+M9  Net-_M10-Pad3_ /B /VDD /VDD mosfet_p		
+M8  /SUM /A0 Net-_M10-Pad3_ /VDD mosfet_p		
+M10  /SUM /B0 Net-_M10-Pad3_ /VDD mosfet_p		
+M5  /SUM /A Net-_M5-Pad3_ GND mosfet_n		
+M11  /SUM /A0 Net-_M11-Pad3_ GND mosfet_n		
+M12  Net-_M11-Pad3_ /B0 GND GND mosfet_n		
+M6  Net-_M5-Pad3_ /B GND GND mosfet_n		
+M13  /CARRY /A0 GND GND mosfet_n		
+M16  /CARRY /B0 GND GND mosfet_n		
+M14  Net-_M14-Pad1_ /A0 /VDD /VDD mosfet_p		
+M15  /CARRY /B0 Net-_M14-Pad1_ /VDD mosfet_p		
+M3  /A0 /A /VDD /VDD mosfet_p		
+M1  /A0 /A GND GND mosfet_n		
+M4  /VDD /B /B0 /VDD mosfet_p		
+M2  /B0 /B GND GND mosfet_n		
+U1  /A /B /VDD /SUM /CARRY PORT		
+
+.end
